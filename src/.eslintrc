@@ -4,7 +4,7 @@
     "env": {
       "browser": true
     },
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "rules": {
       "no-plusplus": [0],
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
