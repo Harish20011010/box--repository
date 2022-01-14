@@ -8,6 +8,7 @@ import ShowMainData from "../components/show/ShowMainData";
 import Cast from "../components/show/Cast";
 
 import Seasons from "../components/show/Seasons";
+import { InfoBlock, ShowPageWrapper } from "./Show.styled";
 
 function Show() {
   const reducer = (prevState, action) => {
@@ -80,7 +81,7 @@ function Show() {
   }
 
   return (
-    <div>
+    <ShowPageWrapper>
       <ShowMainData
         image={show.image}
         name={show.name}
@@ -89,25 +90,25 @@ function Show() {
         tags={show.genres}
       />
 
-      <div>
+      <InfoBlock>
         <h2>Details</h2>
         <Details
           status={show.status}
           network={show.neywork}
           premiered={show.premiered}
         />
-      </div>
+      </InfoBlock>
 
-      <div>
+      <InfoBlock>
         <h2>Seasons</h2>
         <Seasons seasons={show._embedded.seasons} />
-      </div>
+      </InfoBlock>
 
-      <div>
+      <InfoBlock>
         <h2>Cast</h2>
         <Cast cast={show._embedded.cast} />
-      </div>
-    </div>
+      </InfoBlock>
+    </ShowPageWrapper>
   );
 }
 
